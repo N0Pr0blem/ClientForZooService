@@ -2,6 +2,8 @@ package org.zoo_client;
 
 public class UserEntity {
     public enum Access{ADMIN,USER}
+    public static String[] AdminCommand = {"Add new user", "Show all", "Delete one","Exit"};
+    public static String[] UserCommand = {"Exit"};
 
     private Long id;
     private String name;
@@ -10,8 +12,7 @@ public class UserEntity {
     private String password;
     private Access access;
 
-    public UserEntity(Long id, String name, String surname, String login, String password, Access access){
-        this.id = id;
+    public UserEntity(String name, String surname, String login, String password, Access access){
         this.name=name;
         this.surname = surname;
         this.login=login;
@@ -71,6 +72,6 @@ public class UserEntity {
 
     @Override
     public String toString(){
-        return "Name:"+name+"\nSurname:"+surname+"\nLogin:"+login+"\nAccess:"+access;
+        return "Id:"+id+"\nName:"+name+"\nSurname:"+surname+"\nLogin:"+login+"\nAccess:"+access;
     }
 }
